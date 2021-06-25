@@ -26,7 +26,7 @@ const WorkoutCreate = () => {
     <div className="row">
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
-          <h1>Add a new WorkOut:</h1>
+          <h1>Add a new Workout:</h1>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input type="text" className="form-control" placeholder="Workout Name"

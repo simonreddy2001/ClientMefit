@@ -13,11 +13,15 @@ import Menu from "./Menu";
 import NoMatch from "./NoMatch";
 import RolesRoute from "./RolesRoute";
 import SecretBooks from "./SecretBooks";
+import Dashboard from "./Dashboard";
 
 const MeFit = () => (
   <>
     <Menu />
     <Switch>
+    <Route exact path="/dashboard">
+        <Dashboard />
+      </Route>
     <Route exact path="/add-profile">
         <AddProfile />
       </Route>

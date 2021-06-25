@@ -1,57 +1,56 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+//import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { allprofiles } from "../modules/Profile";
+import { userProfile } from "../modules/profileAPI";
 
 
-const ProfileDetails = () => {
+const Dashboard = () => {
 
-  const { profileId } = useParams();
+  //const { profileId } = useParams();
   const dispatch = useDispatch();
   const { profiles } = useSelector((state) => state);
-  const [profile, setProfile] = useState();
+ 
 
   useEffect(() => {
-    dispatch(allprofiles())
+    dispatch(userProfile())
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    setProfile(profiles.find(profile => profile.id === parseInt(profileId, 10)))
-  }, [profileId, profiles]);
+  
 
-  return profile ? (
+  return (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Details for Profile ID {profile.id}</h1>
+        <h1>Details of your Profile
+        </h1>
         <hr/>
         <h3>Email</h3>
-        <p className="lead">{profile.email}</p>
+        <p className="lead">{profiles.email}</p>
         <h3>User</h3>
-        <p className="lead">{profile.userId}</p>
+        <p className="lead">{profiles.userId}</p>
         <h3>Goals</h3>
-        <p className="lead">{profile.goalId}</p>
+        <p className="lead">{profiles.goalId}</p>
         <h3>AddressId</h3>
-        <p className="lead">{profile.addressId}</p>
+        <p className="lead">{profiles.addressId}</p>
         <h3>ProgramsId</h3>
-        <p className="lead">{profile.programId}</p>
+        <p className="lead">{profiles.programId}</p>
         <h3>Sets</h3>
-        <p className="lead">{profile.setId}</p>
+        <p className="lead">{profiles.setId}</p>
         <h3>Weight</h3>
-        <p className="lead">{profile.weight}</p>
+        <p className="lead">{profiles.weight}</p>
         <h3>Height</h3>
-        <p className="lead">{profile.height}</p>
+        <p className="lead">{profiles.height}</p>
         <h3>MedicalCondition</h3>
-        <p className="lead">{profile.medicalConditions}</p>
+        <p className="lead">{profiles.medicalConditions}</p>
         <h3>Disabilities</h3>
-        <p className="lead">{profile.disabilities}</p>
+        <p className="lead">{profiles.disabilities}</p>
         <hr/>
         <p>
           <Link to="/">&laquo; back to list</Link>
         </p>
       </div>
     </div>
-  ) : null
+  )
 }
 
-export default ProfileDetails
+export default Dashboard

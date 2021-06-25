@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import RenderOnRole from "./RenderOnRole";
 export default class AddProfile extends Component {
     static displayName = AddProfile.name;
 
@@ -77,139 +77,133 @@ export default class AddProfile extends Component {
 
     render() {
         return (
-            <div style={{ textAlign: "center" }}>
-                <h1>Add Profile</h1>
-                <div style={{ textAlign: "center" }}>
+            <div className="row">
+                <div className="col-md-12">
                     <form onSubmit={this.addUser} id="addForm">
-
-                        <label for="email">Email:
-                            <input
-                                onChange={(event) => this.setState({ email: event.target.value })}
-                                type="text"
-                                id="email"
-                                name="email"
-                                required
-                            /><br /><br />
-                        </label>
-
-                        <label for="sname">Surname:
-                            <input
-                                onChange={(event) => this.setState({ sname: event.target.value })}
-                                type="text"
-                                id="sname"
-                                name="sname"
-                                required
-                            /><br /><br />
-                        </label>
-
-                        <label for="fname">First name:
-                            <input
+                        <h1> Add Profile</h1>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="fname">First name: </label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ fname: event.target.value })}
                                 type="text"
                                 id="fname"
                                 name="fname"
                                 required
-                            /><br /><br />
-                        </label>
-
-                        <label for="weight">Weight:
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="sname">Last name:</label>
+                            <input className="form-control"
+                                onChange={(event) => this.setState({ sname: event.target.value })}
+                                type="text"
+                                id="sname"
+                                name="sname"
+                                required
+                            />
+                        </div>
+                        <div className="form-grou col-md-8">
+                            <label htmlFor="email">Email:</label>
+                            <input className="form-control"
+                                onChange={(event) => this.setState({ email: event.target.value })}
+                                type="text"
+                                id="email"
+                                name="email"
+                                required
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="weight">Weight:</label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ weight: parseInt(event.target.value) })}
                                 type="text"
                                 id="weight"
                                 name="weight"
                                 required
-                            /><br /><br />
-                        </label>
-
-                        <label for="height">Height:
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="height">Height:</label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ height: parseInt(event.target.value) })}
                                 type="text"
                                 id="height"
                                 name="height"
                                 required
-                            /><br /><br />
-                        </label>
-
-                        <label for="medcon">Medical conditions:
-
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="medcon">Medical conditions: </label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ medcon: event.target.value })}
                                 type="text"
                                 id="medcon"
                                 name="medcon"
-                            /><br /><br />
-                        </label>
-
-
-                        <label for="disab">Disabilities:
-
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="disab">Disabilities:</label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ disab: event.target.value })}
                                 type="text"
                                 id="disab"
                                 name="disab"
-                            /><br /><br />
-                        </label>
-
-                        <label for="address1">Address Line 1:
-
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="address1">Address Line 1:</label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ addressLine1: event.target.value })}
                                 id="address1"
                                 name="address1"
                                 required
-                            /><br /><br />
-                        </label>
-
-                        <label for="address2">Address Line 2:
-
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="address2">Address Line 2: </label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ addressLine2: event.target.value })}
                                 id="address2"
                                 name="address2"
-                            /><br /><br />
-                        </label>
-
-                        <label for="address3">Address Line 3:
-
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="address3">Address Line 3: </label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ addressLine3: event.target.value })}
                                 id="address3"
                                 name="address3"
-                            /><br /><br />
-                        </label>
-
-                        <label for="postalcode">Postal Code:
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="postalcode">Postal Code:</label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ postalcode: event.target.value })}
                                 id="postalcode"
                                 name="postalcode"
-                            /><br /><br />
-                        </label>
-
-                        <label for="city">City:
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="city">City:</label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ city: event.target.value })}
                                 id="city"
                                 name="city"
-                            /><br /><br />
-                        </label>
-
-                        <label for="country">Country:
-                            <input
+                            />
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="country">Country:</label>
+                            <input className="form-control"
                                 onChange={(event) => this.setState({ country: event.target.value })}
                                 id="country"
                                 name="country"
-                            /><br /><br />
-                        </label>
+                            />
+                        </div>
+                        <RenderOnRole roles={['user']}>
+                            <button type="submit" className="btn btn-primary">Add profile</button>
+                        </RenderOnRole>
 
-                        <input type="submit" value="Submit" />
                     </form>
                 </div>
-
-
             </div>
         );
     }
