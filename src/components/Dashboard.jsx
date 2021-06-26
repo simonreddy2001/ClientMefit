@@ -26,6 +26,7 @@ const Dashboard = () => {
       <div className="col-sm-12">
 
         <h1>Details of your Profile {profiles.id}</h1>
+        <hr/>
         <table className="table table-sm table-dark">
           <tbody>
             <tr className="bg-primary">
@@ -36,7 +37,7 @@ const Dashboard = () => {
               <td>User</td>
               <td>{profiles.userId}</td>
             </tr>
-            <tr className="bg-active">
+            <tr className="bg-info">
               <td>Goals</td>
               <td>{profiles.goalId}</td>
             </tr>
@@ -44,32 +45,37 @@ const Dashboard = () => {
               <td>AddressId</td>
               <td>{profiles.addressId}</td>
             </tr>
-            <tr className="bg-danger">
+            <tr className="bg-warning">
               <td>ProgramsId</td>
               <td>{profiles.programId}</td>
             </tr>
-            <tr className="bg-warning">
+            <tr className="bg-danger">
+              <td>WorkoutId</td>
+              <td>{profiles.workoutId}</td>
+            </tr>
+            <tr className="bg-info">
               <td>Sets</td>
               <td>{profiles.setId}</td>
             </tr>
-            <tr className="bg-info">
+            <tr className="bg-success">
               <td>Weight</td>
               <td>{profiles.weight}</td>
             </tr>
-            <tr className="bg-light">
+            <tr className="bg-warning">
               <td>Height</td>
               <td>{profiles.height}</td>
             </tr>
-            <tr className="bg-success">
+            <tr className="bg-danger">
               <td>MedicalCondition</td>
               <td>{profiles.medicalConditions}</td>
             </tr>
-            <tr className="bg-danger">
+            <tr className="bg-info">
               <td>Disabilities</td>
               <td>{profiles.disabilities}</td>
             </tr>
           </tbody>
         </table>
+        <hr/>
         <p>
           <Link to="/">&laquo; back to programs</Link>
         </p>

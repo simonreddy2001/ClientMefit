@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import RenderOnRole from "./RenderOnRole";
-import { useHistory } from 'react-router-dom';
 
 
 export default class AddProfile extends Component {
@@ -36,28 +35,8 @@ export default class AddProfile extends Component {
             }
         }).then(response => response.json()).then(res => {
             this.setState({ user: res }); console.log(res);
-        }).then(res => this.addProfile());
-
-
-    }
-    async addProfile() {
-        let profile = {
-            Email: this.state.email,
-            Weight: this.state.weight,
-            Height: this.state.height,
-            MedicalConditions: this.state.medcon,
-            Disabilities: this.state.disab,
-            UserId: this.state.user.id
-        };
-        fetch('https://localhost:44339/api/v1/profiles', {
-            method: 'POST',
-            body: JSON.stringify(profile),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        }).then(response => response.json()).then(res => {
-            this.setState({ profile: res }); console.log(res);
         }).then(res => this.addAddress());
+
 
     }
     async addAddress() {
@@ -68,7 +47,6 @@ export default class AddProfile extends Component {
             PostalCode: this.state.postalcode,
             City: this.state.city,
             Country: this.state.country,
-            ProfileId: this.state.profile.id
         };
         fetch('https://localhost:44339/api/v1/addresses', {
             method: 'POST',
@@ -78,8 +56,30 @@ export default class AddProfile extends Component {
             }
         }).then(response => response.json()).then(res => {
             this.setState({ address: res }); console.log(res);
-        }).then(()=>this.routeChange());
+        }).then(res=>this.addProfile());
     }
+    async addProfile() {
+        let profile = {
+            Email: this.state.email,
+            Weight: this.state.weight,
+            Height: this.state.height,
+            MedicalConditions: this.state.medcon,
+            Disabilities: this.state.disab,
+            UserId: this.state.user.id,
+            addressId: this.state.address.id
+        };
+        fetch('https://localhost:44339/api/v1/profiles', {
+            method: 'POST',
+            body: JSON.stringify(profile),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then(response => response.json()).then(res => {
+            this.setState({ profile: res }); console.log(res);
+        }).then(() => this.routeChange());
+
+    }
+    
 
     render() {
         return (

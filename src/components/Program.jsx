@@ -24,13 +24,22 @@ const Program = () => {
       <div className="col-sm-12">
         <h1>Information for program ID {program.id}</h1>
         <hr/>
-        <h3>Name</h3>
-        <p className="lead">{program.name}</p>
-        <h3>Category</h3>
-        <p className="lead">{program.category}</p>
+        <table className="table table-sm table-dark">
+          <tbody>
+            <tr className="bg-primary">
+              <td>Name</td>
+              <td>{program.name}</td>
+            </tr>
+            <tr className="bg-danger">
+              <td>Category</td>
+              <td>{program.category}</td>
+            </tr>
+          </tbody>
+        </table>
+        
         <hr/>
         <p>
-          <Link to="/">&laquo; back to programs</Link>
+          <Link to="/programs">&laquo; back to programs</Link>
         </p>
       </div>
     </div>

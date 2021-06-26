@@ -8,6 +8,8 @@ import Workouts from "./Workouts";
 import WorkoutCreate from "./WorkoutCreate";
 import Exercise from "./Exercise";
 import Exercises from "./Exercises";
+import ProfilesList from "./ProfilesList";
+import ProfileView from "./ProfileView";
 import ExerciseCreate from "./ExerciseCreate";
 import Menu from "./Menu";
 import NoMatch from "./NoMatch";
@@ -51,6 +53,12 @@ const MeFit = () => (
       </Route>
       <Route path="/exercises/:exerciseId">
         <Exercise />
+      </Route>
+      <Route exact path="/profiles-list">
+        <ProfilesList />
+      </Route>
+      <Route path="/profiles/:profileId">
+        <ProfileView />
       </Route>
       <RolesRoute path="/secret" roles={['admin']}>
         <SecretBooks />

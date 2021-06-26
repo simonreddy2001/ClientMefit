@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allWorkouts, deleteWorkout, addWorkoutToProfile } from "../modules/workoutAPI";
+import RenderOnRole from "./RenderOnRole";
 
 const Workouts = () => {
 
@@ -23,7 +24,8 @@ const Workouts = () => {
               <th>Name</th>
               <th>Type</th>
               <th>Complete</th>
-              <th>Actions</th>
+              <th>User Actions</th>
+              <th>Admin Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -40,12 +42,12 @@ const Workouts = () => {
                     Add Workout to my Profile
                   </button>
                 </td>
-                <td>
+                <td><RenderOnRole roles={['admin','contributor']}>
                   <button
                     className="btn btn-xs btn-danger"
                     onClick={() => dispatch(deleteWorkout(workout))} >
                     Delete Workout
-                  </button>
+                  </button></RenderOnRole>
                 </td>
               </tr>
             ))}

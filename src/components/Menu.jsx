@@ -10,15 +10,16 @@ const Menu = () => (
       <div id="navbar">
         <ul className="nav navbar-nav">
         <li><Link to="/">Dashboard</Link></li>
-        <li><Link to="/add-profile">Add Profile</Link></li>
+         {/*<li><Link to="/add-profile">Add Profile</Link></li>*/}
           <li><Link to="/programs">Programs</Link></li>
           <li><Link to="/programs/new">New Program</Link></li>
           <li><Link to="/workouts">Workouts</Link></li>
           <li><Link to="/workouts/new">New Workout</Link></li>
           <li><Link to="/exercises">Exercises</Link></li>
           <li><Link to="/exercises/new">New Exercise</Link></li>
-          <li><Link to="/secret">Secret Books</Link></li>
-          {/*<li><Link to="/foo">No Match</Link></li>*/}
+          <li><Link to="/profiles-list">Profiles</Link></li>
+          {/*<li><Link to="/secret">Secret Books</Link></li>
+          <li><Link to="/foo">No Match</Link></li>*/}
         </ul>
         <button className="btn btn-success navbar-btn navbar-right" style={{ marginRight: 0 }} onClick={() => UserService.doLogout()}>
           Logout

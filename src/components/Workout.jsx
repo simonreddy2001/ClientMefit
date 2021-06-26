@@ -24,12 +24,22 @@ const Workout = () => {
       <div className="col-sm-12">
         <h1>Information for Workout ID {workout.id}</h1>
         <hr/>
-        <h3>Name</h3>
-        <p className="lead">{workout.name}</p>
-        <h3>Type</h3>
-        <p className="lead">{workout.type}</p>
-        <h3>Complete</h3>
-        <p className="lead">{workout.complete}</p>
+        <table className="table table-sm table-dark">
+          <tbody>
+            <tr className="bg-primary">
+              <td>Name</td>
+              <td>{workout.name}</td>
+            </tr>
+            <tr className="bg-danger">
+              <td>Type</td>
+              <td>{workout.type}</td>
+            </tr>
+            <tr className="bg-success">
+              <td>Complete</td>
+              <td>{workout.complete ? 'Yes' : 'No'}</td>
+            </tr>
+          </tbody>
+        </table>
         <hr/>
         <p>
           <Link to="/workouts">&laquo; back to workouts</Link>

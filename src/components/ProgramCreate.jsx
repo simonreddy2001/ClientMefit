@@ -37,7 +37,7 @@ const ProgramCreate = () => {
                    value={category} onChange={(e) => setCategory(e.target.value)}/>
           </div>
           
-          <RenderOnRole roles={['user']}>
+          <RenderOnRole roles={['admin','contributor']}>
             <button type="submit" className="btn btn-primary">Add program</button>
           </RenderOnRole>
         </form>

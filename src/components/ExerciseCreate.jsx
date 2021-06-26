@@ -42,7 +42,7 @@ const ExerciseCreate = () => {
                    value={targetMuscleGroup} onChange={(e) => setTargetMuscleGroup(e.target.value)}/>
           </div>
           
-          <RenderOnRole roles={['user']}>
+          <RenderOnRole roles={['admin','contributor']}>
             <button type="submit" className="btn btn-primary">Add exercise</button>
           </RenderOnRole>
         </form>

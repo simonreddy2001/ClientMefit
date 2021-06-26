@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allPrograms, deleteProgram, addProgramToProfile } from "../modules/programAPI";
+import RenderOnRole from "./RenderOnRole";
 
 const Programs = () => {
 
@@ -22,7 +23,8 @@ const Programs = () => {
             <th>ID</th>
             <th>Name</th>
             <th>Category</th>
-            <th>Actions</th>
+            <th>User Actions</th>
+            <th>Admin Actions</th>
           </tr>
           </thead>
           <tbody>
@@ -38,10 +40,10 @@ const Programs = () => {
                   Add Program to my Profile
                 </button>
               </td>
-              <td>
+              <td><RenderOnRole roles={['admin','contributor']}>
                 <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteProgram(program))}>
                   Delete Program
-                </button>
+                </button></RenderOnRole>
               </td>
             </tr>
           ))}

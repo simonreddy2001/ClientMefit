@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allExercises, deleteExercise } from "../modules/exerciseAPI";
+import RenderOnRole from "./RenderOnRole";
 
 const Exercises = () => {
 
@@ -23,7 +24,7 @@ const Exercises = () => {
             <th>Name</th>
             <th>Description</th>
             <th>Target Muscle Group</th>
-            <th>Actions</th>
+            <th>Admin Actions</th>
           </tr>
           </thead>
           <tbody>
@@ -35,10 +36,12 @@ const Exercises = () => {
               </td>
               <td>{exercise.description}</td>
               <td>{exercise.targetMuscleGroup}</td>
-              <td>
-                <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteExercise(exercise))}>
+              <td><RenderOnRole roles={['admin','contributor']}>
+              <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteExercise(exercise))}>
                   Delete Exercise
                 </button>
+              </RenderOnRole>
+                
               </td>
             </tr>
           ))}

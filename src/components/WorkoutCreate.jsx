@@ -43,7 +43,7 @@ const WorkoutCreate = () => {
                    value={complete} onChange={(e) => setComplete(e.target.value)}/>
           </div>
           <div>
-          <RenderOnRole roles={['user']}>
+          <RenderOnRole roles={['admin','contributor']}>
             <button type="submit" className="btn btn-primary">Add Workout</button>
           </RenderOnRole>
           </div>
