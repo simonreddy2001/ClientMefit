@@ -5,13 +5,13 @@ const Menu = () => (
   <nav className="navbar navbar-default">
     <div className="container-fluid">
       <div className="navbar-header">
-        <Link className="navbar-brand" to="/dashboard">MeFit!</Link>
+        <Link className="navbar-brand" to="/">MeFit!</Link>
       </div>
       <div id="navbar">
         <ul className="nav navbar-nav">
-        <li><Link to="/dashboard">Dashboard</Link></li>
+        <li><Link to="/">Dashboard</Link></li>
         <li><Link to="/add-profile">Add Profile</Link></li>
-          <li><Link to="/">Programs</Link></li>
+          <li><Link to="/programs">Programs</Link></li>
           <li><Link to="/programs/new">New Program</Link></li>
           <li><Link to="/workouts">Workouts</Link></li>
           <li><Link to="/workouts/new">New Workout</Link></li>

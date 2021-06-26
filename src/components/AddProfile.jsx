@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import RenderOnRole from "./RenderOnRole";
-export default class AddProfile extends Component {
-    static displayName = AddProfile.name;
+import { useHistory } from 'react-router-dom';
 
+
+export default class AddProfile extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -13,8 +15,12 @@ export default class AddProfile extends Component {
         this.addUser = this.addUser.bind(this);
         this.addProfile = this.addProfile.bind(this);
         this.addAddress = this.addAddress.bind(this);
+        this.routeChange = this.routeChange.bind(this);
     }
-
+    routeChange=()=> {
+        let path = `/programs`;
+        this.props.history.push(path);
+      }
     async addUser(event) {
         event.preventDefault();
         let user = {
@@ -72,7 +78,7 @@ export default class AddProfile extends Component {
             }
         }).then(response => response.json()).then(res => {
             this.setState({ address: res }); console.log(res);
-        })
+        }).then(()=>this.routeChange());
     }
 
     render() {

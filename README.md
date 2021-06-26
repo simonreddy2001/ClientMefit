@@ -1,24 +1,7 @@
-# Keycloak React.JS Demo
+# Keycloak React.JS Me Fit App
 
-Demo for React.JS and Keycloak SSO integration.
+Developed using React.JS and Keycloak SSO integration.
 
-## YouTube videos
-
-There are three videos on YouTube about this demo repository and how to integrate your React.js based application with Keycloak:
-
-### Part 1: Configuration & Usage, w/o 3rd party libs
-[![](http://img.youtube.com/vi/q50LxyGtEf0/0.jpg)](http://www.youtube.com/watch?v=q50LxyGtEf0 "")  
-https://youtu.be/q50LxyGtEf0
-
-### Part 2: Conditional rendering of components
-[![](http://img.youtube.com/vi/zIoWxY3Xhnw/0.jpg)](http://www.youtube.com/watch?v=zIoWxY3Xhnw "")  
-https://youtu.be/zIoWxY3Xhnw
-
-### Part 3: React Router Integration, depending on Keycloak Roles
-[![](http://img.youtube.com/vi/es8sf8D7UyQ/0.jpg)](http://www.youtube.com/watch?v=es8sf8D7UyQ "")  
-https://youtu.be/es8sf8D7UyQ
-
-> Please check out also my [entire Youtube Channel](https://www.youtube.com/c/NikoKöbler?sub_confirmation=1) with various videos on Keycloak and stuff around:
 
 ## Silent Check-SSO feature
 
@@ -41,8 +24,6 @@ Instead, use standard authorization code flow with [PKCE](https://tools.ietf.org
 
 ## Backend service
 
-For convenience, I provide a backend service running at the location specified in [`setupProxy.js`](./src/setupProxy.js) file.
+For convenience, I provide a backend service running at the location specified in localhost file.
 
-However, there's also a swagger spec ([`backend-swagger-spec.yml`](./backend-swagger-spec.yml)) providing the API of the needed backend, so you can spin up a service on your own.
-The URLs in the `securityDefinitions` section shows my local Keycloak setup, you have to adjust this possibly!
-(Also don't forget to adjust the host/port in the `setupProxy.js` file, if you run your service on ohters than default.)
+However, there's also a swagger spec (...........) providing the API of the needed backend.

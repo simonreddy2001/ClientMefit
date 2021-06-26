@@ -14,6 +14,8 @@ const programsReducer = (state = [], action) => {
 
     case DELETE_PROGRAM:
       return state.filter((program) => program.id !== action.payload.program.id);
+      
+      
 
     default:
       return state;
@@ -60,19 +62,20 @@ export const deleteProgram = program => {
 };
 
 export const addProgramToProfile = program => {
-  console.log(`${UserService.getUsername()} added program to your profile ${program.name}`);
+  console.log(`${UserService.getUsername()} added program to profile ${program.name}`);
   return {
     type: ADD_PROGRAM_TO_PROFILE,
     payload: {
       program,
       request: {
-        //url: `https://localhost:44339/api/v1/profiles/${profileId}`,
+        url: `https://localhost:44339/api/v1/profiles/profiles/${UserService.getUsername()}`,
         method: HttpService.HttpMethods.PATCH,
+        headers: {    "Content-type": "application/json"  },
       },
       body: JSON.stringify({
-        path: '/programId',
-        op: 'replace',
-        value: `${program.id}`
+        "path": "/programId",
+        "op": "replace",
+        "value": `${program.id}`
       })
     },
   }

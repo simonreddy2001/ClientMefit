@@ -19,13 +19,13 @@ const MeFit = () => (
   <>
     <Menu />
     <Switch>
-    <Route exact path="/dashboard">
+    <Route exact path="/">
         <Dashboard />
       </Route>
     <Route exact path="/add-profile">
         <AddProfile />
       </Route>
-      <Route exact path="/">
+      <Route exact path="/programs">
         <Programs />
       </Route>
       <Route exact path="/programs/new">
