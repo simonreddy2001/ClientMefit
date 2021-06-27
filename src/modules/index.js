@@ -2,8 +2,9 @@ import { combineReducers } from "redux";
 import programs from "./programAPI";
 import workouts from "./workoutAPI";
 import exercises from "./exerciseAPI";
-import profiles from "./profileAPI"
+import profiles from "./profileAPI";
+import user from "./userAPI";
 
 export default combineReducers({
-  programs, workouts, exercises, profiles
+  programs, workouts, exercises, profiles, user
 });

@@ -54,12 +54,12 @@ const MeFit = () => (
       <Route path="/exercises/:exerciseId">
         <Exercise />
       </Route>
-      <Route exact path="/profiles-list">
+      <RolesRoute exact path="/profiles-list" roles={['admin']}>
         <ProfilesList />
-      </Route>
-      <Route path="/profiles/:profileId">
+      </RolesRoute>
+      <RolesRoute path="/profiles/:profileId" roles={['admin']}>
         <ProfileView />
-      </Route>
+      </RolesRoute>
       <RolesRoute path="/secret" roles={['admin']}>
         <SecretBooks />
       </RolesRoute>

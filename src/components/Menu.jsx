@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import UserService from "../services/UserService";
 import logo from '../Assets/logo.jpg'
+import RenderOnRole from "./RenderOnRole";
 
 const Menu = () => (
   <nav className="navbar navbar-default">
@@ -17,8 +18,10 @@ const Menu = () => (
           <li><Link to="/workouts">Workouts</Link></li>
          
           <li><Link to="/exercises">Exercises</Link></li>
-          
+          <RenderOnRole roles={['admin']}>
           <li><Link to="/profiles-list">Profiles</Link></li>
+          </RenderOnRole>
+          
           {/*<li><Link to="/secret">Secret Books</Link></li>
           <li><Link to="/programs/new">New Program</Link></li>
            <li><Link to="/workouts/new">New Workout</Link></li>

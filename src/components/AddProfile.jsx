@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 export default class AddProfile extends Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {
@@ -15,10 +15,10 @@ export default class AddProfile extends Component {
         this.addAddress = this.addAddress.bind(this);
         this.routeChange = this.routeChange.bind(this);
     }
-    routeChange=()=> {
+    routeChange = () => {
         let path = `/programs`;
         this.props.history.push(path);
-      }
+    }
     async addUser(event) {
         event.preventDefault();
         let user = {
@@ -55,7 +55,7 @@ export default class AddProfile extends Component {
             }
         }).then(response => response.json()).then(res => {
             this.setState({ address: res }); console.log(res);
-        }).then(res=>this.addProfile());
+        }).then(res => this.addProfile());
     }
     async addProfile() {
         let profile = {
@@ -78,7 +78,7 @@ export default class AddProfile extends Component {
         }).then(() => this.routeChange());
 
     }
-    
+
 
     render() {
         return (
@@ -86,6 +86,7 @@ export default class AddProfile extends Component {
                 <div className="col-md-12">
                     <form onSubmit={this.addUser} id="addForm">
                         <h1> Add Profile</h1>
+                        <hr />
                         <div className="form-group col-md-6">
                             <label htmlFor="fname">First name: </label>
                             <input className="form-control"
@@ -203,10 +204,10 @@ export default class AddProfile extends Component {
                                 name="country"
                             />
                         </div>
-                        
+                        <hr />
+                        <div className="col text-center">
                             <button type="submit" className="btn btn-primary">Add profile</button>
-                        
-
+                        </div>
                     </form>
                 </div>
             </div>
