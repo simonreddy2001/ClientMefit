@@ -2,7 +2,6 @@ import { SUCCESS_SUFFIX } from "redux-axios-middleware";
 import HttpService from "../services/HttpService";
 import UserService from "../services/UserService";
 
-const USER_PROFILE = 'USER_PROFILE';
 const LIST_PROFILES = 'LIST_PROFILES';
 const ADD_PROFILE = 'ADD_PROFILE';
 const DELETE_PROFILE = 'DELETE_PROFILE';
@@ -11,9 +10,6 @@ const profilesReducer = (state = [], action) => {
   switch (action.type) {
     case LIST_PROFILES + SUCCESS_SUFFIX:
       return action.payload.data;
-      
-    case USER_PROFILE + SUCCESS_SUFFIX:
-        return action.payload.data[0];
 
     case DELETE_PROFILE:
       return state.filter((profile) => profile.id !== action.payload.profile.id);
@@ -24,15 +20,6 @@ const profilesReducer = (state = [], action) => {
 };
 
 export default profilesReducer;
-
-export const userProfile = () => ({
-    type: USER_PROFILE,
-    payload: {
-      request: {
-        url: `https://localhost:44339/api/v1/profiles/profiles/${UserService.getUsername()}`,
-      },
-    },
-  });
 
 export const allProfiles = () => ({
   type: LIST_PROFILES,

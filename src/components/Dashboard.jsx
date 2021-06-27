@@ -13,13 +13,14 @@ const Dashboard = () => {
   const history = useHistory()
 
   useEffect(() => {
-    
-    setTimeout(()=>{if(!user.email){
+    dispatch(userProfile())
+    setTimeout(()=>{if(!user){
       history.push('/add-profile')
     }},3000)
-    dispatch(userProfile())
+   
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  
 
 
   return (

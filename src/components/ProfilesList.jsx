@@ -15,7 +15,7 @@ const ProfilesList = () => {
   return (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Profiles Available</h1>
+        <h1>Profiles Available in MeFit</h1>
         <table className="table table-striped">
           <thead>
             <tr>
@@ -49,7 +49,6 @@ const ProfilesList = () => {
                 <td>{profile.height}</td>
                 <td>{profile.medicalConditions}</td>
                 <td>{profile.disabilities}</td>
-
                 <td><RenderOnRole roles={['admin']}>
                   <button
                     className="btn btn-xs btn-danger"
@@ -60,8 +59,8 @@ const ProfilesList = () => {
                 </td>
               </tr>
             ))}
-          </tbody>
-        </table>
+            </tbody>
+            </table>
       </div>
     </div>
   );
