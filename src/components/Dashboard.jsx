@@ -2,33 +2,34 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 //import { useParams } from "react-router";
 import { Link, useHistory } from "react-router-dom";
-import { userProfile } from "../modules/userAPI";
-
+import { userProfile, userProgram, userWorkout } from "../modules/userAPI";
 
 const Dashboard = () => {
 
   //const { profileId } = useParams();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state);
+  const { user, userorkout, userrogram } = useSelector((state) => state);
   const history = useHistory()
-
+  const programId = user.programId
+  const workoutId = user.workoutId
   useEffect(() => {
     dispatch(userProfile())
-    setTimeout(()=>{if(!user){
-      history.push('/add-profile')
-    }},3000)
-   
+    setTimeout(() => {
+      if (!user) {
+        history.push('/add-profile')
+      }
+    }, 3000)
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  
-
 
   return (
     <div className="row">
+      <h3>your goal program is</h3>
+      {/*<p onload={() => dispatch(userWorkout(workoutId))}>{ userorkout.name}</p>
+      <p onload={() => dispatch(userProgram(programId))}>{ userrogram.name}</p>*/}
       <div className="col-sm-12">
 
         <h1>Details of your Profile {user.id}</h1>
-        <hr/>
+        <hr />
         <table className="table table-sm table-dark">
           <tbody>
             <tr className="bg-primary">
@@ -77,9 +78,13 @@ const Dashboard = () => {
             </tr>
           </tbody>
         </table>
-        <hr/>
+        <hr />
         <p>
           <Link to="/programs">Go to programs to add goal</Link>
+        </p>
+        <hr />
+        <p>
+          <Link to="/workouts">Go to workouts to add goal</Link>
         </p>
       </div>
     </div>
