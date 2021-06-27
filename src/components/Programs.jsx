@@ -24,7 +24,7 @@ const Programs = () => {
             <th>Name</th>
             <th>Category</th>
             <th>User Actions</th>
-            <th>Admin Actions</th>
+            <th><RenderOnRole roles={['admin','contributor']}>Admin Actions</RenderOnRole></th>
           </tr>
           </thead>
           <tbody>
@@ -49,6 +49,13 @@ const Programs = () => {
           ))}
           </tbody>
         </table>
+        <hr/>
+        <RenderOnRole roles={['admin','contributor']}>
+        <button className="btn bg-success">
+          <Link to="/programs/new">Add a new Program</Link>
+        </button>
+        </RenderOnRole>
+        
       </div>
     </div>
   );

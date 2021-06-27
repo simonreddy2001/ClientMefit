@@ -24,7 +24,8 @@ const Exercises = () => {
             <th>Name</th>
             <th>Description</th>
             <th>Target Muscle Group</th>
-            <th>Admin Actions</th>
+            
+            <th><RenderOnRole roles={['admin','contributor']}>Admin Actions</RenderOnRole></th>
           </tr>
           </thead>
           <tbody>
@@ -36,6 +37,7 @@ const Exercises = () => {
               </td>
               <td>{exercise.description}</td>
               <td>{exercise.targetMuscleGroup}</td>
+              
               <td><RenderOnRole roles={['admin','contributor']}>
               <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteExercise(exercise))}>
                   Delete Exercise
@@ -47,6 +49,12 @@ const Exercises = () => {
           ))}
           </tbody>
         </table>
+        <hr/>
+        <RenderOnRole roles={['admin','contributor']}>
+        <button className="btn bg-success">
+          <Link to="/exercises/new">Add a new Exercise</Link>
+        </button>
+        </RenderOnRole>
       </div>
     </div>
   );

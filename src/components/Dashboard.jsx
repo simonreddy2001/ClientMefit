@@ -77,7 +77,7 @@ const Dashboard = () => {
         </table>
         <hr/>
         <p>
-          <Link to="/">&laquo; back to programs</Link>
+          <Link to="/programs">&laquo; back to programs</Link>
         </p>
       </div>
     </div>

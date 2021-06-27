@@ -25,7 +25,7 @@ const Workouts = () => {
               <th>Type</th>
               <th>Complete</th>
               <th>User Actions</th>
-              <th>Admin Actions</th>
+              <th><RenderOnRole roles={['admin','contributor']}>Admin Actions</RenderOnRole></th>
             </tr>
           </thead>
           <tbody>
@@ -53,6 +53,12 @@ const Workouts = () => {
             ))}
           </tbody>
         </table>
+        <hr/>
+        <RenderOnRole roles={['admin','contributor']}>
+        <button className="btn bg-success">
+          <Link to="/workouts/new">Add a new Workout</Link>
+        </button>
+        </RenderOnRole>
       </div>
     </div>
   );

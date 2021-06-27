@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import RenderOnRole from "./RenderOnRole";
 
 
 export default class AddProfile extends Component {
@@ -204,9 +203,9 @@ export default class AddProfile extends Component {
                                 name="country"
                             />
                         </div>
-                        <RenderOnRole roles={['user']}>
+                        
                             <button type="submit" className="btn btn-primary">Add profile</button>
-                        </RenderOnRole>
+                        
 
                     </form>
                 </div>

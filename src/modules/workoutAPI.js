@@ -66,8 +66,9 @@ export const addWorkoutToProfile = workout => {
       payload: {
         workout,
         request: {
-         // url: `https://localhost:44339/api/v1/profiles/${profileId}`,
+         url: `https://localhost:44339/api/v1/profiles/profiles/${UserService.getUsername()}`,
           method: HttpService.HttpMethods.PATCH,
+           headers: {    "Content-type": "application/json"  },
         },
         body: JSON.stringify({
           path: '/workoutId',
