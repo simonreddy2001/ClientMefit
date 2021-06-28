@@ -15,7 +15,7 @@ const Dashboard = () => {
   useEffect(() => {
     dispatch(userProfile())
     setTimeout(() => {
-      if (!user) {
+      if (!user.email) {
         history.push('/add-profile')
       }
     }, 3000)

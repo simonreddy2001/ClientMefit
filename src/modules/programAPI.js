@@ -69,13 +69,12 @@ export const addProgramToProfile = program => {
         url: `https://localhost:44339/api/v1/profiles/profiles/${UserService.getUsername()}`,
         method: HttpService.HttpMethods.PATCH,
         headers: {    "Content-type": "application/json"  },
-        data: {
+        data: [{
           "path": "/programId",
           "op": "replace",
           "value": program.id
-        }
+        }]
       },
-     
     },
   }
 };

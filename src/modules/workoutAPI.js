@@ -60,21 +60,21 @@ export const deleteWorkout = workout => {
 };
 
 export const addWorkoutToProfile = workout => {
-    console.log(`${UserService.getUsername()} added workout to your profile ${workout.name}`);
-    return {
-      type: ADD_WORKOUT_TO_PROFILE,
-      payload: {
-        workout,
-        request: {
-         url: `https://localhost:44339/api/v1/profiles/profiles/${UserService.getUsername()}`,
-          method: HttpService.HttpMethods.PATCH,
-           headers: {    "Content-type": "application/json"  },
-        },
-        body: JSON.stringify({
-          path: '/workoutId',
-          op: 'replace',
-          value: `${workout.id}`
-        })
+  console.log(`${UserService.getUsername()} added Workout to profile ${workout.name}`);
+  return {
+    type: ADD_WORKOUT_TO_PROFILE,
+    payload: {
+      workout,
+      request: {
+        url: `https://localhost:44339/api/v1/profiles/profiles/${UserService.getUsername()}`,
+        method: HttpService.HttpMethods.PATCH,
+        headers: {    "Content-type": "application/json"  },
+        data: [{
+          "path": "/workoutId",
+          "op": "replace",
+          "value": workout.id
+        }]
       },
-    }
-  };
+    },
+  }
+};
