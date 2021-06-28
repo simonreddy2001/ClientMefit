@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 //import { useParams } from "react-router";
-import { Link, useHistory, Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { userProfile } from "../modules/userAPI";
 import { userProgram } from "../modules/userProgramAPI";
 import { userWorkout } from "../modules/userWorkoutAPI";
@@ -33,7 +33,7 @@ const Dashboard = () => {
 
   return (
     <>
-    { isLoading === true && <p>Loading user…</p> } 
+      {isLoading === true && <p>Loading user…</p>}
       {(isLoading === false && user === null) && <Redirect to="/add-profile" />}
       {user !== null &&
         <div className="row">
@@ -139,13 +139,12 @@ const Dashboard = () => {
               </tbody>
             </table>
             <hr />
-            <p>
-              <Link to="/programs">Go to programs to add goal</Link>
-            </p>
-            <hr />
-            <p>
+            <button className="btn bg-danger"><Link to="/programs">Go to programs to add goal</Link>
+            </button>
+            <button className="btn bg-warning">
               <Link to="/workouts">Go to workouts to add goal</Link>
-            </p>
+            </button>
+            <hr />
           </div>
         </div>
       }

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { addExercise } from "../modules/exerciseAPI";
 import RenderOnRole from "./RenderOnRole";
+import { Link } from "react-router-dom";
 
 const ExerciseCreate = () => {
 
@@ -44,6 +45,7 @@ const ExerciseCreate = () => {
           
           <RenderOnRole roles={['admin','contributor']}>
             <button type="submit" className="btn btn-primary">Add exercise</button>
+            <button className="btn btn-dark"><Link to="/exercises">Cancel</Link></button>
           </RenderOnRole>
         </form>
       </div>
