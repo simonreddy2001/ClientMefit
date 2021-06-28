@@ -22,7 +22,7 @@ export const userAddress = (addressId) => ({
   type: USER_ADDRESS,
   payload: {
     request: {
-      url: `https://localhost:44339/api/v1/addresses/${addressId}`,
+      url: `https://mefitdeploy.azurewebsites.net/api/v1/addresses/${addressId}`,
       method: HttpService.HttpMethods.GET,
     },
   },

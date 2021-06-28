@@ -26,7 +26,7 @@ export const allWorkouts = () => ({
   type: LIST_WORKOUTS,
   payload: {
     request: {
-      url: 'https://localhost:44339/api/v1/workouts',
+      url: 'https://mefitdeploy.azurewebsites.net/api/v1/workouts',
     },
   },
 });
@@ -37,7 +37,7 @@ export const addWorkout = workout => {
     type: ADD_WORKOUT,
     payload: {
       request: {
-        url: 'https://localhost:44339/api/v1/workouts',
+        url: 'https://mefitdeploy.azurewebsites.net/api/v1/workouts',
         method: HttpService.HttpMethods.POST,
         data: workout,
       },
@@ -52,7 +52,7 @@ export const deleteWorkout = workout => {
     payload: {
       workout,
       request: {
-        url: `https://localhost:44339/api/v1/workouts/${workout.id}`,
+        url: `https://mefitdeploy.azurewebsites.net/api/v1/workouts/${workout.id}`,
         method: HttpService.HttpMethods.DELETE,
       },
     },
@@ -66,7 +66,7 @@ export const addWorkoutToProfile = workout => {
     payload: {
       workout,
       request: {
-        url: `https://localhost:44339/api/v1/profiles/profiles/${UserService.getUsername()}`,
+        url: `https://mefitdeploy.azurewebsites.net/api/v1/profiles/profiles/${UserService.getUsername()}`,
         method: HttpService.HttpMethods.PATCH,
         headers: {    "Content-type": "application/json"  },
         data: [{

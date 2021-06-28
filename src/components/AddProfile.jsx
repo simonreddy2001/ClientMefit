@@ -26,7 +26,7 @@ export default class AddProfile extends Component {
             LastName: this.state.sname,
             Email: this.state.email
         };
-        fetch('https://localhost:44339/api/v1/users', {
+        fetch('https://mefitdeploy.azurewebsites.net/api/v1/users', {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {
@@ -47,7 +47,7 @@ export default class AddProfile extends Component {
             City: this.state.city,
             Country: this.state.country,
         };
-        fetch('https://localhost:44339/api/v1/addresses', {
+        fetch('https://mefitdeploy.azurewebsites.net/api/v1/addresses', {
             method: 'POST',
             body: JSON.stringify(address),
             headers: {
@@ -67,7 +67,7 @@ export default class AddProfile extends Component {
             UserId: this.state.user.id,
             addressId: this.state.address.id
         };
-        fetch('https://localhost:44339/api/v1/profiles', {
+        fetch('https://mefitdeploy.azurewebsites.net/api/v1/profiles', {
             method: 'POST',
             body: JSON.stringify(profile),
             headers: {

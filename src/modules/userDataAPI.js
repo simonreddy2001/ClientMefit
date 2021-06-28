@@ -22,7 +22,7 @@ export const userData = (userId) => ({
   type: USER_DATA,
   payload: {
     request: {
-      url: `https://localhost:44339/api/v1/users/${userId}`,
+      url: `https://mefitdeploy.azurewebsites.net/api/v1/users/${userId}`,
       method: HttpService.HttpMethods.GET,
     },
   },

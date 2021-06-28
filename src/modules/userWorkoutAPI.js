@@ -22,7 +22,7 @@ export const userWorkout = (workoutId) => ({
   type: USER_WORKOUT,
   payload: {
     request: {
-      url: `https://localhost:44339/api/v1/WORKOUTs/${workoutId}`,
+      url: `https://mefitdeploy.azurewebsites.net/api/v1/WORKOUTs/${workoutId}`,
       method: HttpService.HttpMethods.GET,
     },
   },

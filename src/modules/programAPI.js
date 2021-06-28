@@ -26,7 +26,7 @@ export const allPrograms = () => ({
   type: LIST_PROGRAMS,
   payload: {
     request: {
-      url: 'https://localhost:44339/api/v1/programs',
+      url: 'https://mefitdeploy.azurewebsites.net/api/v1/programs',
     },
   },
 });
@@ -37,7 +37,7 @@ export const addProgram = program => {
     type: ADD_PROGRAM,
     payload: {
       request: {
-        url: 'https://localhost:44339/api/v1/programs',
+        url: 'https://mefitdeploy.azurewebsites.net/api/v1/programs',
         method: HttpService.HttpMethods.POST,
         data: program,
       },
@@ -52,7 +52,7 @@ export const deleteProgram = program => {
     payload: {
       program,
       request: {
-        url: `https://localhost:44339/api/v1/programs/${program.id}`,
+        url: `https://mefitdeploy.azurewebsites.net/api/v1/programs/${program.id}`,
         method: HttpService.HttpMethods.DELETE,
       },
     },
@@ -66,7 +66,7 @@ export const addProgramToProfile = program => {
     payload: {
       program,
       request: {
-        url: `https://localhost:44339/api/v1/profiles/profiles/${UserService.getUsername()}`,
+        url: `https://mefitdeploy.azurewebsites.net/api/v1/profiles/profiles/${UserService.getUsername()}`,
         method: HttpService.HttpMethods.PATCH,
         headers: {    "Content-type": "application/json"  },
         data: [{
