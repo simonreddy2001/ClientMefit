@@ -22,7 +22,7 @@ export const userProgram = (programId) => ({
   type: USER_PROGRAM,
   payload: {
     request: {
-      url: `https://mefitdeploy.azurewebsites.net/api/v1/programs/${programId}`,
+      url: `https://mefitappdb.azurewebsites.net/api/v1/programs/${programId}`,
       method: HttpService.HttpMethods.GET,
     },
   },

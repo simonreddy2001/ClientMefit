@@ -25,7 +25,7 @@ export const allProfiles = () => ({
   type: LIST_PROFILES,
   payload: {
     request: {
-      url: 'https://mefitdeploy.azurewebsites.net/api/v1/profiles',
+      url: 'https://mefitappdb.azurewebsites.net/api/v1/profiles',
     },
   },
 });
@@ -36,7 +36,7 @@ export const addProfile = profile => {
     type: ADD_PROFILE,
     payload: {
       request: {
-        url: 'https://mefitdeploy.azurewebsites.net/api/v1/profiles',
+        url: 'https://mefitappdb.azurewebsites.net/api/v1/profiles',
         method: HttpService.HttpMethods.POST,
         data: profile,
       },
@@ -51,7 +51,7 @@ export const deleteProfile = profile => {
     payload: {
       profile,
       request: {
-        url: `https://mefitdeploy.azurewebsites.net/api/v1/profiles/${profile.id}`,
+        url: `https://mefitappdb.azurewebsites.net/api/v1/profiles/${profile.id}`,
         method: HttpService.HttpMethods.DELETE,
       },
     },

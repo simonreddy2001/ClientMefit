@@ -25,7 +25,7 @@ export const allExercises = () => ({
   type: LIST_EXERCISES,
   payload: {
     request: {
-      url: 'https://mefitdeploy.azurewebsites.net/api/v1/exercises',
+      url: 'https://mefitappdb.azurewebsites.net/api/v1/exercises',
     },
   },
 });
@@ -36,7 +36,7 @@ export const addExercise = exercise => {
     type: ADD_EXERCISE,
     payload: {
       request: {
-        url: 'https://mefitdeploy.azurewebsites.net/api/v1/exercises',
+        url: 'https://mefitappdb.azurewebsites.net/api/v1/exercises',
         method: HttpService.HttpMethods.POST,
         data: exercise,
       },
@@ -51,7 +51,7 @@ export const deleteExercise = exercise => {
     payload: {
       exercise,
       request: {
-        url: `https://mefitdeploy.azurewebsites.net/api/v1/exercises/${exercise.id}`,
+        url: `https://mefitappdb.azurewebsites.net/api/v1/exercises/${exercise.id}`,
         method: HttpService.HttpMethods.DELETE,
       },
     },

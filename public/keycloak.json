@@ -1,8 +1,10 @@
 {
-  "realm": "MeFit",
-  "auth-server-url": "http://localhost:8083/auth/",
+  "realm": "MeFitApp",
+  "auth-server-url": "https://mefitfrontapi.herokuapp.com/auth/",
   "ssl-required": "external",
-  "resource": "mefit",
+  "resource": "MeFit",
   "public-client": true,
+  "verify-token-audience": true,
+  "use-resource-role-mappings": true,
   "confidential-port": 0
 }

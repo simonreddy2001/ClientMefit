@@ -24,7 +24,7 @@ export const userProfile = () => ({
   type: USER_PROFILE,
   payload: {
     request: {
-      url: `https://mefitdeploy.azurewebsites.net/api/v1/profiles/profiles/${UserService.getUsername()}`,
+      url: `https://mefitappdb.azurewebsites.net/api/v1/profiles/${UserService.getUsername()}`,
       method: HttpService.HttpMethods.GET,
     },
   },
