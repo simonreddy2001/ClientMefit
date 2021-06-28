@@ -13,7 +13,7 @@ export default class AddProfile extends Component {
         this.addUser = this.addUser.bind(this);
         this.addProfile = this.addProfile.bind(this);
         this.addAddress = this.addAddress.bind(this);
-        this.routeChange = this.routeChange.bind(this);
+        //this.routeChange = this.routeChange.bind(this);
     }
     routeChange = () => {
         let path = `/programs`;
@@ -75,8 +75,8 @@ export default class AddProfile extends Component {
             }
         }).then(response => response.json()).then(res => {
             this.setState({ profile: res }); console.log(res);
-        }).then(() => this.routeChange());
-
+        })
+//.then(() => this.routeChange());
     }
 
 
