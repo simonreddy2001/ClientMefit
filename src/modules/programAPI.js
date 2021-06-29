@@ -68,7 +68,7 @@ export const addProgramToProfile = program => {
       request: {
         url: `https://mefitdeploy.azurewebsites.net/api/v1/profiles/profiles/${UserService.getUsername()}`,
         method: HttpService.HttpMethods.PATCH,
-        headers: {    "Content-type": "application/json"  },
+        headers: { "Content-type": "application/json" },
         data: [{
           "path": "/programId",
           "op": "replace",

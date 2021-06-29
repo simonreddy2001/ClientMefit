@@ -10,7 +10,7 @@ const userReducer = (state = [], action) => {
 
     case USER_PROGRAM + SUCCESS_SUFFIX:
       return action.payload.data;
-      
+
     default:
       return state;
   }
