@@ -9,6 +9,7 @@ import { userAddress } from "../modules/userAddressAPI";
 import { userData } from "../modules/userDataAPI";
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
+import RenderOnRole from "./RenderOnRole";
 
 const Dashboard = () => {
 
@@ -169,6 +170,9 @@ const Dashboard = () => {
             <button className="btn bg-warning">
               <Link to="/workouts">Go to workouts to add goal</Link>
             </button>
+            <RenderOnRole roles={['admin', 'contributor']}>
+            <button className="btn bg-success">Apply for become Trainer/Contributor
+            </button></RenderOnRole>
             <hr />
           </div>
         </div>
