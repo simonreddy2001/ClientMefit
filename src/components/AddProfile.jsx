@@ -76,7 +76,7 @@ export default class AddProfile extends Component {
         }).then(response => response.json()).then(res => {
             this.setState({ profile: res }); console.log(res);
         })
-//.then(() => this.routeChange());
+        //.then(() => this.routeChange());
     }
 
 

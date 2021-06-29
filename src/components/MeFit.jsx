@@ -14,17 +14,16 @@ import ExerciseCreate from "./ExerciseCreate";
 import Menu from "./Menu";
 import NoMatch from "./NoMatch";
 import RolesRoute from "./RolesRoute";
-import SecretBooks from "./SecretBooks";
 import Dashboard from "./Dashboard";
 
 const MeFit = () => (
   <>
     <Menu />
     <Switch>
-    <Route exact path="/">
+      <Route exact path="/">
         <Dashboard />
       </Route>
-    <Route exact path="/add-profile">
+      <Route exact path="/add-profile">
         <AddProfile />
       </Route>
       <Route exact path="/programs">
@@ -59,9 +58,6 @@ const MeFit = () => (
       </RolesRoute>
       <RolesRoute path="/profiles/:profileId" roles={['admin']}>
         <ProfileView />
-      </RolesRoute>
-      <RolesRoute path="/secret" roles={['admin']}>
-        <SecretBooks />
       </RolesRoute>
       <Route path="*">
         <NoMatch />

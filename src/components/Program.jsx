@@ -22,8 +22,8 @@ const Program = () => {
   return program ? (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Information for program ID {program.id}</h1>
-        <hr/>
+        <h1>Information of program</h1>
+        <hr />
         <table className="table table-sm table-dark">
           <tbody>
             <tr className="bg-primary">
@@ -36,8 +36,8 @@ const Program = () => {
             </tr>
           </tbody>
         </table>
-        
-        <hr/>
+
+        <hr />
         <p>
           <Link to="/programs">&laquo; back to programs</Link>
         </p>

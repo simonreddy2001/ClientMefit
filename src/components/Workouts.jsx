@@ -16,7 +16,7 @@ const Workouts = () => {
   return (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Workout to Add to your Goal</h1>
+        <h1>Workouts to Add to your Goal</h1>
         <table className="table table-striped">
           <thead>
             <tr>

@@ -7,12 +7,17 @@ import { userProgram } from "../modules/userProgramAPI";
 import { userWorkout } from "../modules/userWorkoutAPI";
 import { userAddress } from "../modules/userAddressAPI";
 import { userData } from "../modules/userDataAPI";
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
 
 const Dashboard = () => {
 
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true)
   const { user, uProgram, uWorkout, uAddress, uData } = useSelector((state) => state);
+  const [value, onChange] = useState(new Date());
+  const today = new Date();
+  const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
   useEffect(() => {
     dispatch(userProfile()).then(() => {
@@ -36,8 +41,27 @@ const Dashboard = () => {
       {isLoading === true && <p>Loading user…</p>}
       {(isLoading === false && user === null) && <Redirect to="/add-profile" />}
       {user !== null &&
+
         <div className="row">
+          <hr />
+          <div>
+            <table className="table table-sm table-dark">
+              <tbody>
+                <tr>
+                  <td><Calendar
+                    onChange={onChange}
+                    value={value}
+                  /></td>
+                  <td><h1>Your goal ends in 7 days</h1>
+                    <h1>Your goal starts from {date}</h1>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
           <div className="col-sm-12">
+            <hr />
             <h2>YOUR GOAL PROGRAM</h2>
             <hr />
             <table className="table table-sm table-dark">

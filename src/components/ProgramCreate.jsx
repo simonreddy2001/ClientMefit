@@ -30,15 +30,15 @@ const ProgramCreate = () => {
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input type="text" className="form-control" placeholder="Name"
-                   value={name} onChange={(e) => setName(e.target.value)}/>
+              value={name} onChange={(e) => setName(e.target.value)} />
           </div>
           <div className="form-group">
             <label htmlFor="category">Category</label>
             <input type="text" className="form-control" placeholder="Category"
-                   value={category} onChange={(e) => setCategory(e.target.value)}/>
+              value={category} onChange={(e) => setCategory(e.target.value)} />
           </div>
-          
-          <RenderOnRole roles={['admin','contributor']}>
+
+          <RenderOnRole roles={['admin', 'contributor']}>
             <button type="submit" className="btn btn-primary">Add program</button>
             <button className="btn btn-dark"><Link to="/programs">Cancel</Link></button>
           </RenderOnRole>

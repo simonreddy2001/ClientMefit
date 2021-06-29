@@ -24,7 +24,7 @@ const ProfileView = () => {
     <div className="row">
       <div className="col-sm-12">
         <h1>Details for Profile ID {profile.id}</h1>
-        <hr/>
+        <hr />
         <h3>Email</h3>
         <p className="lead">{profile.email}</p>
         <h3>User</h3>
@@ -45,7 +45,7 @@ const ProfileView = () => {
         <p className="lead">{profile.medicalConditions}</p>
         <h3>Disabilities</h3>
         <p className="lead">{profile.disabilities}</p>
-        <hr/>
+        <hr />
         <p>
           <Link to="/profiles-list">&laquo; back to all Profiles view</Link>
         </p>

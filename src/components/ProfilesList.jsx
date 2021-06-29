@@ -57,13 +57,13 @@ const ProfilesList = () => {
                     Delete Profile
                   </button>
                   <button className="btn btn-xs btn-warning">
-                  Edit Profile
-                </button></RenderOnRole>
+                    Edit Profile
+                  </button></RenderOnRole>
                 </td>
               </tr>
             ))}
-            </tbody>
-            </table>
+          </tbody>
+        </table>
       </div>
     </div>
   );

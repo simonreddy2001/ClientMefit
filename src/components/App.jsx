@@ -13,10 +13,10 @@ const App = () => (
     <BrowserRouter>
       <div className="container">
         <RenderOnAnonymous>
-          <Welcome/>
+          <Welcome />
         </RenderOnAnonymous>
         <RenderOnAuthenticated>
-          <MeFit/>
+          <MeFit />
         </RenderOnAuthenticated>
       </div>
     </BrowserRouter>

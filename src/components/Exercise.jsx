@@ -22,8 +22,8 @@ const Exercise = () => {
   return exercise ? (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Information for Exercise ID {exercise.id}</h1>
-        <hr/>
+        <h1>Information of Exercise</h1>
+        <hr />
         <table className="table table-sm table-dark">
           <tbody>
             <tr className="bg-primary">
@@ -40,7 +40,7 @@ const Exercise = () => {
             </tr>
           </tbody>
         </table>
-        <hr/>
+        <hr />
         <p>
           <Link to="/exercises">&laquo; back to exercises</Link>
         </p>

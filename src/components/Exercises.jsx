@@ -16,47 +16,47 @@ const Exercises = () => {
   return (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Exercises to Add to your Goal</h1>
+        <h1>Exercises Available</h1>
         <table className="table table-striped">
           <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Target Muscle Group</th>
-            
-            <th><RenderOnRole roles={['admin','contributor']}>Admin Actions</RenderOnRole></th>
-          </tr>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Target Muscle Group</th>
+
+              <th><RenderOnRole roles={['admin', 'contributor']}>Admin Actions</RenderOnRole></th>
+            </tr>
           </thead>
           <tbody>
-          {exercises.map((exercise) => (
-            <tr key={exercise.id}>
-              <td>{exercise.id}</td>
-              <td>
-                <Link to={`/exercises/${exercise.id}`}>{exercise.name}</Link>
-              </td>
-              <td>{exercise.description}</td>
-              <td>{exercise.targetMuscleGroup}</td>
-              
-              <td><RenderOnRole roles={['admin','contributor']}>
-              <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteExercise(exercise))}>
-                  Delete Exercise
-                </button>
-                <button className="btn btn-xs btn-warning">
-                  Edit Exercise
-                </button>
-              </RenderOnRole>
-                
-              </td>
-            </tr>
-          ))}
+            {exercises.map((exercise) => (
+              <tr key={exercise.id}>
+                <td>{exercise.id}</td>
+                <td>
+                  <Link to={`/exercises/${exercise.id}`}>{exercise.name}</Link>
+                </td>
+                <td>{exercise.description}</td>
+                <td>{exercise.targetMuscleGroup}</td>
+
+                <td><RenderOnRole roles={['admin', 'contributor']}>
+                  <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteExercise(exercise))}>
+                    Delete Exercise
+                  </button>
+                  <button className="btn btn-xs btn-warning">
+                    Edit Exercise
+                  </button>
+                </RenderOnRole>
+
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
-        <hr/>
-        <RenderOnRole roles={['admin','contributor']}>
-        <button className="btn bg-success">
-          <Link to="/exercises/new">Add a new Exercise</Link>
-        </button>
+        <hr />
+        <RenderOnRole roles={['admin', 'contributor']}>
+          <button className="btn bg-success">
+            <Link to="/exercises/new">Add a new Exercise</Link>
+          </button>
         </RenderOnRole>
       </div>
     </div>
