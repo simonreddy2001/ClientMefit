@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-//import { useParams } from "react-router";
+import run from '../Assets/run.jpg'
 import { Link, Redirect } from "react-router-dom";
 import { userProfile } from "../modules/userAPI";
 import { userProgram } from "../modules/userProgramAPI";
@@ -54,6 +54,7 @@ const Dashboard = () => {
                   /></td>
                   <td><h1>Your goal ends in 7 days</h1>
                     <h1>Your goal starts from {date}</h1>
+                    <img src={run} alt="Run"></img>
                   </td>
                 </tr>
               </tbody>
