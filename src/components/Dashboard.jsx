@@ -55,7 +55,7 @@ const Dashboard = () => {
                   /></td>
                   <td><h1>Your goal ends in 7 days</h1>
                     <h1>Your goal starts from {date}</h1>
-                    <img src={run} alt="Run"></img>
+                    <img src={run} alt="Run" width='50px' height='50px'></img>
                   </td>
                 </tr>
               </tbody>
