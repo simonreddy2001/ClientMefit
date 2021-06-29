@@ -170,7 +170,7 @@ const Dashboard = () => {
             <button className="btn bg-warning">
               <Link to="/workouts">Go to workouts to add goal</Link>
             </button>
-            <RenderOnRole roles={['admin', 'contributor']}>
+            <RenderOnRole roles={['user']}>
             <button className="btn bg-success">Apply for become Trainer/Contributor
             </button></RenderOnRole>
             <hr />
