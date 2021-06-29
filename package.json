@@ -1,5 +1,5 @@
 {
-  "name": "keycloak-react",
+  "name": "mefit-app",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,9 @@
     "lint": "eslint --ext .js,.jsx \"src/\""
   },
   "author": {
-    "name": "Niko Köbler",
-    "email": "niko@n-k.de",
-    "url": "https://www.n-k.de"
+    "name": "simon kommareddy",
+    "email": "simon.reddy2001@gmail.com",
+    "url": "https://simonreddy-portfolio.netlify.app/"
   },
   "license": "MIT",
   "devDependencies": {
