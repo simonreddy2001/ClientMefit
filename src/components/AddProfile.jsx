@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Redirect } from "react-router-dom";
 
 export default class AddProfile extends Component {
 
@@ -13,12 +13,9 @@ export default class AddProfile extends Component {
         this.addUser = this.addUser.bind(this);
         this.addProfile = this.addProfile.bind(this);
         this.addAddress = this.addAddress.bind(this);
-        //this.routeChange = this.routeChange.bind(this);
+
     }
-    routeChange = () => {
-        let path = `/programs`;
-        this.props.history.push(path);
-    }
+
     async addUser(event) {
         event.preventDefault();
         let user = {
@@ -76,7 +73,7 @@ export default class AddProfile extends Component {
         }).then(response => response.json()).then(res => {
             this.setState({ profile: res }); console.log(res);
         })
-        //.then(() => this.routeChange());
+            //.then(() => <Redirect to="/" />);
     }
 
 
@@ -206,7 +203,7 @@ export default class AddProfile extends Component {
                         </div>
                         <hr />
                         <div className="col text-center">
-                            <button type="submit" className="btn btn-primary">Add profile</button>
+                            <button type="submit" className="btn bg-success">Add profile<Redirect to="/" /></button>
                         </div>
                     </form>
                 </div>
