@@ -55,7 +55,10 @@ const ProfilesList = () => {
                     onClick={() => dispatch(deleteProfile(profile))}
                   >
                     Delete Profile
-                  </button></RenderOnRole>
+                  </button>
+                  <button className="btn btn-xs btn-warning">
+                  Edit Profile
+                </button></RenderOnRole>
                 </td>
               </tr>
             ))}

@@ -43,6 +43,9 @@ const Programs = () => {
               <td><RenderOnRole roles={['admin','contributor']}>
                 <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteProgram(program))}>
                   Delete Program
+                </button>
+                <button className="btn btn-xs btn-warning">
+                  Edit Program
                 </button></RenderOnRole>
               </td>
             </tr>

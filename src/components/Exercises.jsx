@@ -42,6 +42,9 @@ const Exercises = () => {
               <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteExercise(exercise))}>
                   Delete Exercise
                 </button>
+                <button className="btn btn-xs btn-warning">
+                  Edit Exercise
+                </button>
               </RenderOnRole>
                 
               </td>

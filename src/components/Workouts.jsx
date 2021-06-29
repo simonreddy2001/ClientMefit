@@ -25,7 +25,7 @@ const Workouts = () => {
               <th>Type</th>
               <th>Complete</th>
               <th>User Actions</th>
-              <th><RenderOnRole roles={['admin','contributor']}>Admin Actions</RenderOnRole></th>
+              <th><RenderOnRole roles={['admin', 'contributor']}>Admin Actions</RenderOnRole></th>
             </tr>
           </thead>
           <tbody>
@@ -42,22 +42,25 @@ const Workouts = () => {
                     Add Workout to my Profile
                   </button>
                 </td>
-                <td><RenderOnRole roles={['admin','contributor']}>
+                <td><RenderOnRole roles={['admin', 'contributor']}>
                   <button
                     className="btn btn-xs btn-danger"
                     onClick={() => dispatch(deleteWorkout(workout))} >
                     Delete Workout
+                  </button>
+                  <button className="btn btn-xs btn-warning">
+                    Edit Workout
                   </button></RenderOnRole>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-        <hr/>
-        <RenderOnRole roles={['admin','contributor']}>
-        <button className="btn bg-success">
-          <Link to="/workouts/new">Add a new Workout</Link>
-        </button>
+        <hr />
+        <RenderOnRole roles={['admin', 'contributor']}>
+          <button className="btn bg-success">
+            <Link to="/workouts/new">Add a new Workout</Link>
+          </button>
         </RenderOnRole>
       </div>
     </div>
