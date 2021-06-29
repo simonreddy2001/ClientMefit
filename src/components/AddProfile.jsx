@@ -203,7 +203,7 @@ export default class AddProfile extends Component {
                         </div>
                         <hr />
                         <div className="col text-center">
-                            <button type="submit" className="btn bg-success">Add profile<Redirect to="/" /></button>
+                            <button type="submit" className="btn bg-success" onClick={()=><Redirect to="/" />}>Add profile</button>
                         </div>
                     </form>
                 </div>
