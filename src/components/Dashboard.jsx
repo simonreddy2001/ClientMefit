@@ -38,7 +38,7 @@ const Dashboard = () => {
 
   return (
     <>
-      {isLoading === true && <p>Loading user…</p>}
+      {isLoading === true && <h1>Loading user…</h1>}
       {(isLoading === false && user === null) && <Redirect to="/add-profile" />}
       {user !== null &&
 
