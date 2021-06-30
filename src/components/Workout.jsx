@@ -38,6 +38,10 @@ const Workout = () => {
               <td>Complete</td>
               <td>{workout.complete ? 'Yes' : 'No'}</td>
             </tr>
+            <tr className="bg-success">
+              <td>Exercises</td>
+              <td>Skips, Sit-UPs</td>
+            </tr>
           </tbody>
         </table>
         <hr />

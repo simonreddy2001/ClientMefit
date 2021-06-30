@@ -34,6 +34,14 @@ const Program = () => {
               <td>Category</td>
               <td>{program.category}</td>
             </tr>
+            <tr className="bg-info">
+              <td>Workouts</td>
+              <td>Basic Circle Workout</td>
+            </tr>
+            <tr className="bg-success">
+              <td>Exercises</td>
+              <td>Skips, Sit-UPs</td>
+            </tr>
           </tbody>
         </table>
 

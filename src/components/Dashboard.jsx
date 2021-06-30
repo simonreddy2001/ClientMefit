@@ -53,14 +53,13 @@ const Dashboard = () => {
                     onChange={onChange}
                     value={value}
                   /></td>
-                  <td><h1>Your goal ends in 7 days</h1>
-                    <h1>Your goal starts from {date}</h1><hr />
-                    <img src={run} alt="Run" width='50px' height='50px'></img>
+                  <td><h1>Your goal ends in 5 days (5 out of 7)</h1>
+                    <h1>Your goal starts from 2021-6-28</h1><hr />
+                    <img src={run} alt="Run" width='50px' height='50px'></img><img src={run} alt="Run" width='50px' height='50px'></img>
                   </td>
                 </tr>
               </tbody>
             </table>
-
           </div>
           <div className="col-sm-12">
             <hr />
@@ -75,6 +74,14 @@ const Dashboard = () => {
                 <tr className="bg-danger">
                   <td>Category</td>
                   <td>{uProgram.category}</td>
+                </tr>
+                <tr className="bg-info">
+                  <td>Workouts</td>
+                  <td>Basic Circle Workout</td>
+                </tr>
+                <tr className="bg-success">
+                  <td>Exercises</td>
+                  <td>Skips, Sit-UPs</td>
                 </tr>
               </tbody>
             </table>
@@ -96,6 +103,10 @@ const Dashboard = () => {
                 <tr className="bg-success">
                   <td>Complete</td>
                   <td>{uWorkout.complete ? 'Yes' : 'No'}</td>
+                </tr>
+                <tr className="bg-success">
+                  <td>Exercises</td>
+                  <td>Biking, Skips, Sit-UPs</td>
                 </tr>
               </tbody>
             </table>
@@ -171,8 +182,8 @@ const Dashboard = () => {
               <Link to="/workouts">Go to workouts to add goal</Link>
             </button>
             <RenderOnRole roles={['user']}>
-            <button className="btn bg-success">Apply for become Trainer/Contributor
-            </button></RenderOnRole>
+              <button className="btn bg-success">Apply for become Trainer/Contributor
+              </button></RenderOnRole>
             <hr />
           </div>
         </div>
