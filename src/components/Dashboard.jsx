@@ -53,9 +53,9 @@ const Dashboard = () => {
                     onChange={onChange}
                     value={value}
                   /></td>
-                  <td><h1>Your goal ends in 5 days (5 out of 7)</h1>
+                  <td><RenderOnRole roles={['user','admin','contributor']}><h1>Your goal ends in 5 days (5 out of 7)</h1>
                     <h1>Your goal starts from 2021-6-28</h1><hr />
-                    <img src={run} alt="Run" width='50px' height='50px'></img><img src={run} alt="Run" width='50px' height='50px'></img>
+                    <img src={run} alt="Run" width='50px' height='50px'></img><img src={run} alt="Run" width='50px' height='50px'></img></RenderOnRole>
                   </td>
                 </tr>
               </tbody>
